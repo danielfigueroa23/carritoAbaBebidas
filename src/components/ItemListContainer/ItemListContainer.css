@@ -1,0 +1,20 @@
+.greetin-mensage{
+    display: flex;
+    height: 100px;
+    background-color: black;
+    margin-top: 30px;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+}
+
+.text-greeting {
+    color: white;
+    display: flex;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.greetin-mensage h2:hover {
+    color: red;
+}

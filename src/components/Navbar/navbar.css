@@ -1,0 +1,47 @@
+.navbar {
+    display: flex;
+    height: 120px;
+    background-color: gray;
+    border-radius: 30px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+}
+
+.navbar-item {
+    margin-right: 1rem;
+    position: relative;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar a:hover {
+    color: black;
+}
+
+.logo {
+    width: 100px;
+}
+
+.badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 50%;
+    transform: translate(50%, -50%);
+}
+
+.cart {
+    position: relative;
+}

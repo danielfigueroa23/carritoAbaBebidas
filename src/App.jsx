@@ -1,15 +1,13 @@
-import './App.css'
-import Footer from './components/Footer'
-import Header from './components/Header'
-import Main from './components/Main'
+import Navbar from "./components/Navbar/Navbar"
+import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
+
 function App() {
   
 
   return (
     <>
-    <Header/>
-    <Main/>
-    <Footer/>
+      <Navbar/>
+      <ItemListContainer greeting={"Bienvenido/a a la tienda ABA!"}/>
     </>
   )
 }
