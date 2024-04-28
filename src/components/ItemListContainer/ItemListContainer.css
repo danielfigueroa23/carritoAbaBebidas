@@ -9,6 +9,16 @@
     border-radius: 50px;
 }
 
+.box-products{
+    border: 5px solid red;
+    background: white;
+    color: black;
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    margin-top: 10px;
+}
+
 .text-greeting {
     color: white;
     display: flex;
