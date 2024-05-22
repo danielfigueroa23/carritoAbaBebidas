@@ -2,8 +2,10 @@ import "./navbar.css"
 import logo from "../../assets/logo-aba.png"
 import { FaShoppingCart } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useCartContext } from '../../context/cartContext'
 
 function Navbar() {
+  const { cantidadItem } = useCartContext()
   return (
     <div>
       <nav className="navbar">
@@ -28,21 +30,15 @@ function Navbar() {
           Linea Premium
             </Link>
           </li>
-          <li className="navbar-item">
-          <Link to="/Puntosdeventa"> 
-          Puntos de venta
-          </Link>
-          </li>
-          <li className="navbar-item">
-          <Link to="/Contacto"> 
-            Contacto
-          </Link>
-          </li>
         </ul>
-        <div className="cart">
-          <FaShoppingCart size={"30px"}/>
-          <span className="badge">0</span>
-        </div>
+        <Link to='/cart'>
+          <div className="cart">
+            <FaShoppingCart size={"30px"}/>
+            <span className="badge"> {cantidadItem()}</span>
+          </div>
+        </Link>
+        
+
       </nav>
     </div>
   )

@@ -1,35 +1,42 @@
 import React from 'react'
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import getProducts from "../../data/getProducts";
-import ItemDetail from '../ItemDetail';
+import { doc, getDoc, getFirestore ,collection } from 'firebase/firestore'
+import ItemDetail from '../../components/ItemDetail/ItemDetail';
 
 function ItemDetailContainer() {
 
   const [product, setProduct] = useState();
+  const [loading, setLoading] = useState(true)
   const {idProduct} = useParams(); 
 
   useEffect( () => {
-    getProducts
-    .then( (response) => {
-      console.log(response);
-      if (idProduct) {
-        //Se busca y recupera el producto con el id selecionado
-        const NewProduct = response.find( (product) =>  product.id === idProduct);
-        setProduct(NewProduct);
-        console.log(NewProduct);
-      } else {
-        setProducts(response);
+
+    //Creamos una conexion con la base de datos
+    const db = getFirestore();
+
+    const productRef =  doc(collection(db, "items"), idProduct);
+    getDoc(productRef)
+    .then((snapshot) => {
+
+      if (snapshot.exists()){
+        setProduct({id: snapshot.id, ...snapshot.data()});
+        console.log(snapshot);
       }
     })
+    .finally(() => setLoading(false))
 
-    .catch (error => console.error(error));
 }, []);
 
 
   return (
     <div>
-      <ItemDetail product={product} />
+        { loading 
+        ? 
+        <></>
+        :
+        <ItemDetail product={product} />
+        }
     </div>
   )
 }

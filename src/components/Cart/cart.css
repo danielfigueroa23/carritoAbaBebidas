@@ -1,0 +1,16 @@
+.boxCart{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.title {
+    color: black;
+}
+
+.boxItem {
+    background-color: black;
+    margin-top: 20px;
+    padding: 20px;
+    color: white;
+}

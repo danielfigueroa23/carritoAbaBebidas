@@ -1,0 +1,39 @@
+.stylesBoxItem {
+    color: white;
+    width: 100%;
+    background-color: black;
+    border-color: black;
+    border-radius: 15px;
+    display: flex;
+    align-items: space-around;
+    flex-direction: column;
+    padding: 25px;
+    text-align: center;
+    margin-left:20px;
+    margin-right:20px
+}
+
+.imgItem {
+    width: 100%;
+    height: 100%;
+    align-items: center
+}
+
+.btnStyle {
+    background-color: black;
+    border-color: white;
+    border-radius: 15px;
+}
+
+.linkStyle {
+    text-decoration: none;
+    color: white
+}
+
+.btnStyle:hover {
+    background-color: white;
+}
+
+.linkStyle:hover {
+    color: black;
+}

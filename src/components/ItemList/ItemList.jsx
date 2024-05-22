@@ -1,5 +1,6 @@
 import React from 'react'
-import Item from './Item';
+import Item from '../Item/Item'
+import './ItemList.css'
 
 function ItemList({products}) {
 
@@ -10,9 +11,9 @@ function ItemList({products}) {
       });  
 
   return (
-    <>
+    <div className='box-listProducts'>
         {listProducts};
-    </>
+    </div>
   )
 }
 
